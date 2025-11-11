@@ -20,16 +20,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Simple interface for objects that are sources for an {@link InputStream}.
+ * 为可以提供 {@link InputStream} 的对象定义的简单接口。
  *
- * <p>This is the base interface for Spring's more extensive {@link Resource} interface.
+ * <p>这是 Spring 更为完善的 {@link Resource} 接口的基础接口。
  *
- * <p>For single-use streams, {@link InputStreamResource} can be used for any
- * given {@code InputStream}. Spring's {@link ByteArrayResource} or any
- * file-based {@code Resource} implementation can be used as a concrete
- * instance, allowing one to read the underlying content stream multiple times.
- * This makes this interface useful as an abstract content source for mail
- * attachments, for example.
+ * <p>对于一次性使用的流，可以使用 {@link InputStreamResource}
+ * 来包装任意给定的 {@code InputStream}。而 Spring 的
+ * {@link ByteArrayResource} 或任何基于文件的 {@code Resource}
+ * 实现都可以作为具体实例，使得可以多次读取底层内容流。
+ * 例如，这使得该接口可作为邮件附件的抽象内容来源。
  *
  * @author Juergen Hoeller
  * @since 20.01.2004
@@ -42,15 +41,15 @@ import java.io.InputStream;
 public interface InputStreamSource {
 
 	/**
-	 * Return an {@link InputStream} for the content of an underlying resource.
-	 * <p>It is usually expected that every such call creates a <i>fresh</i> stream.
-	 * <p>This requirement is particularly important when you consider an API such
-	 * as JavaMail, which needs to be able to read the stream multiple times when
-	 * creating mail attachments. For such a use case, it is <i>required</i>
-	 * that each {@code getInputStream()} call returns a fresh stream.
-	 * @return the input stream for the underlying resource (must not be {@code null})
-	 * @throws java.io.FileNotFoundException if the underlying resource does not exist
-	 * @throws IOException if the content stream could not be opened
+	 * 返回底层资源内容的 {@link InputStream}。
+	 * <p>通常期望每次调用都会创建一个<i>新的</i>输入流。
+	 * <p>这一点在使用诸如 JavaMail 的 API 时尤为重要，
+	 * 例如在创建邮件附件时需要能够多次读取该流。
+	 * 因此，在这种用例中，<i>必须</i>确保每次调用
+	 * {@code getInputStream()} 都返回一个新的流。
+	 * @return 底层资源的输入流（不得为 {@code null}）
+	 * @throws java.io.FileNotFoundException 如果底层资源不存在
+	 * @throws IOException 如果内容流无法打开
 	 * @see Resource#isReadable()
 	 * @see Resource#isOpen()
 	 */

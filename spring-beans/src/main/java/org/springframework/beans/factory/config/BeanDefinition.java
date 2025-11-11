@@ -24,7 +24,7 @@ import org.springframework.core.AttributeAccessor;
 import org.springframework.core.ResolvableType;
 
 /**
- * A BeanDefinition describes a bean instance, which has property values,
+ * A BeanDefinition describes a bean instance（一个 BeanDefinition 描述一个 Bean 实例）, which has property values,
  * constructor argument values, and further information supplied by
  * concrete implementations.
  *

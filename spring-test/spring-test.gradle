@@ -44,7 +44,7 @@ dependencies {
 	optional("org.junit.jupiter:junit-jupiter-api")
 	optional("org.junit.platform:junit-platform-launcher")  // for AOT processing
 	optional("org.mockito:mockito-core")
-	optional("org.seleniumhq.selenium:htmlunit3-driver") {
+	optional("org.seleniumhq.selenium:htmlunit-driver") {
 		exclude group: "commons-logging", module: "commons-logging"
 		exclude group: "net.bytebuddy", module: "byte-buddy"
 	}

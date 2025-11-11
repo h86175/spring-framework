@@ -16,6 +16,7 @@
 
 package org.springframework.aot.hint;
 
+
 /**
  * Gather hints that can be used to optimize the application runtime.
  *
